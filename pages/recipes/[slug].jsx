@@ -2,6 +2,7 @@ import { createClient } from "contentful"
 import Image from "next/image"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import Skeleton from "@/components/Skeleton"
+import { redirect } from "next/dist/server/api-utils"
 
 
 const client = createClient({
@@ -46,6 +47,15 @@ export async function getStaticProps({params}) { //acessar o slug por aqui agora
     //Se várias entradas corresponder a esse valor, será retornadas todas. mas no caso sabemos que é único esse valor 
     // Isso ainda retorna um array
   })
+
+  if(!items.length) {
+    return {
+      redirect: {
+        destination: '/',
+        permanent: false
+      }
+    }
+  }
 
   // Retornar um objeto para que possamos injetar as props dentro do componente
   // Queremos injetar uma recepe prop => que será items, mas lembrando que items é um array, precisa passar a posição
