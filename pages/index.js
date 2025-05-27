@@ -1,6 +1,5 @@
 import { createClient } from "contentful"
 import RecipeCard from '../components/RecipeCard'
-import { revalidatePath } from "next/cache"
 
 export async function getStaticProps(params) {
   const client = createClient({
