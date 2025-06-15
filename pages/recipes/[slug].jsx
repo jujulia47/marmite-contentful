@@ -81,9 +81,12 @@ export default function RecipeDetails({recipe}) {
     <section>
       <article className="banner">
         <Image 
+        className="img"
           src={`https:${featuredImage.fields.file.url}`}
-          width={featuredImage.fields.file.details.image.width}
-          height={featuredImage.fields.file.details.image.width}
+          // width={featuredImage.fields.file.details.image.width}
+          // height={featuredImage.fields.file.details.image.width}
+          width={1200}
+          height={600}
         />
         <h2>{title}</h2>
       </article>
@@ -107,10 +110,12 @@ export default function RecipeDetails({recipe}) {
           h2,h3 {
             text-transform: uppercase;
           }
-
+          .img {
+            object-fit: cover;
+          }
           .banner h2 {
             margin: 0;
-            background: #fff;
+            background: #FFEBC9;
             display: inline-block;
             padding: 20px;
             position: relative;
@@ -118,6 +123,7 @@ export default function RecipeDetails({recipe}) {
             left: -10px;
             transform: rotateZ(-1deg);
             box-shadow: 1px 3px 5px rgba(0,0,0.1);
+            color: #753422;
           }
           .info p {
             margin: 0;

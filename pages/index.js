@@ -42,6 +42,7 @@ export default function Recipes({ recipes }) {
           display: grid;
           grid-template-columns: 1fr 1fr;
           grid-gap: 20px 60px;
+          max-width: 30pc;
         }
         
         `}

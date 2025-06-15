@@ -3,7 +3,9 @@ import Image from "next/image"
 
 export default function RecipeCard({ recipe}) {
     const {title, slug, cookingTime, thumbnail} = recipe.fields
-
+  console.log("recipe", recipe);
+    console.log("thumbnail field", thumbnail.fields);
+    
     return (
     //   <div>{recipe.fields.title}</div>
     <section>
@@ -11,8 +13,11 @@ export default function RecipeCard({ recipe}) {
             {/* image - thumb*/}
             <Image 
                 src={`https:${thumbnail.fields.file.url}`}
-                width={thumbnail.fields.file.details.image.width}
-                height={thumbnail.fields.file.details.image.height}
+                // width={thumbnail.fields.file.details.image.width}
+                // height={thumbnail.fields.file.details.image.height}
+                width={480}
+                height={530}
+                
             />
         </article>
         <article className="content">
@@ -31,12 +36,13 @@ export default function RecipeCard({ recipe}) {
           transform: rotateZ(-1deg);
         }
         .content {
-          background: #fff;
+          background: #FFEBC9;
           box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
           margin: 0;
           position: relative;
           top: -40px;
           left: -10px;
+          color: #753422
         }
         .info {
           padding: 16px;
@@ -47,7 +53,7 @@ export default function RecipeCard({ recipe}) {
         }
         .info p {
           margin: 0;
-          color: #777;
+          color: #D79771;
         }
         .actions {
           margin-top: 20px;
@@ -56,14 +62,14 @@ export default function RecipeCard({ recipe}) {
           text-decoration: none;
         }
         .actions a {
-          color: #fff;
-          background: #f01b29;
+          color: #FFEBC9;
+          background: #753422;
           padding: 16px 24px;
           text-decoration: none;
         }
         .actions span {
-          color: #fff;
-          background: #f01b29;
+          color: #FFEBC9;
+          background: #753422;
           padding: 16px 24px;
           text-decoration: none;
         }

@@ -23,7 +23,7 @@ export default function NotFound() {
       <style jsx>
         {`
           .not-found {
-            background: #fff;
+            background: #753422;
             padding: 30px;
             box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
             transform: rotateZ(-1deg);
@@ -31,6 +31,12 @@ export default function NotFound() {
 
           h1 {
             font-size: 3em;
+            color: #FFEBC9;
+          }
+
+          h2, p,
+          p < a {
+            color: #FFEBC9;
           }
         `}
       </style>
